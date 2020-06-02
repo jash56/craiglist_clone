@@ -7,6 +7,7 @@ from my_app.models import *
 # Create your views here.
 
 CRAIGLIST_URL = "https://mumbai.craigslist.org/search/?query={}"
+IMAGE_URL = "https://images.craigslist.org/{}_300x300.jpg"
 
 def home(request):
     return render(request,'base.html' ,{'word': 'JASH'})
@@ -22,17 +23,23 @@ def new_search(request):
     final_post = []
 
     for post in post_listings:
-        post_title = post.find(class='result-title').txt
+        post_title = post.find(class_='result-title hdrlnk').text
         post_url = post.find('a').get('href')
-        if post.find(class='result-price'):
-            post_price = post.find(class='result-price').txt
+        if post.find(class_='result-price'):
+            post_price = post.find(class_='result-price').text
         else:
             post_price = 'N/A'
-        final_post.append((post_title, post_url, post_price))
 
+        if post.find(class_='result-image').get('data-ids'):
+            post_image_id = post.find(class_='result-image').get('data-ids').split(',')[0].split(':')[1]
+            post_image_url = IMAGE_URL.format(post_image_id)
+        else:
+            post_image_url = 'https://craigslist.org/images/peace.jpg'
+
+        final_post.append((post_title, post_url, post_price, post_image_url))
     
     context = {
-        'search' : search
+        'search' : search,
         'final_post' : final_post
     }
     return render(request, 'my_app/new_search.html', context)

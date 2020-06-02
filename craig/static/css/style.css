@@ -1,0 +1,31 @@
+.card {
+    height: 400px; /* Your height here */
+    overflow: hidden;
+}
+
+.card-image {
+    height: 250px; /* Your height here */
+    overflow: hidden;
+}
+
+h2 {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: rgb(152, 255, 255);
+
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+nav {
+    height: 500px;
+}
+

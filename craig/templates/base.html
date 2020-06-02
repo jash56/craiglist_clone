@@ -6,56 +6,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Craig Clone~</title>
-    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
 </head>
 <body>
     <!-- NAVIGATION BAR -->
     <nav>
-        <div class="container nav-wrapper">
-            <a href="/" class="brand-logo">Craigiman</a>
-            <ul id="nav-mobile" class="right">
-                <li><a href="/">Home</a></li>
+        <div class="nav-wrapper" style="background-color: black;">
+            <a href="{% url 'home' %}" class="brand-logo center"><i class="large material-icons" style="color: white; font-size:60px">all_inclusive</i>Home</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="https://github.com/jash56/craiglist_clone">Contribute on GitHub!</a></li>
             </ul>
         </div>
     </nav>
+    
     <div class="container">
-    <h1 style="text-align: center">What is the search man?!</h1>
+    <h1 style="text-align: center">Welcome</h1>
         <div class="row">
             <div class="col s4">
                 <div class="center">
-                    <i class="large material-icons" style="color: rgb(240, 150, 33)">flash_on</i>
+                    <i class="large material-icons" style="color: black">flash_on</i>
                     <p>Craiglist web scrapper</p>
                     <p class="light center">Scrape it with us!</p>
                 </div>
             </div>
             <div class="col s4">
                 <div class="center">
-                    <i class="large material-icons" style="color: rgb(216, 219, 47)">camera</i>
+                    <i class="large material-icons" style="color: black">camera</i>
                     <p>Filter your searches</p>
                     <p class="light center">We built in functionality to filter based on pricing</p>
                 </div>
             </div>
             <div class="col s4">
                 <div class="center">
-                    <i class="large material-icons" style="color: rgb(74, 153, 255)">chrome_reader_mode</i>
+                    <i class="large material-icons" style="color: black">chrome_reader_mode</i>
                     <p>A great GUI for Craiglist</p>
                     <p class="light center">We used materialize</p>
                 </div>
             </div>
         </div>
-    <!-- FORM INPUT -->
-    <h1>Hola Como estas!</h1>
+    <!-- FORM -->
+    <h1>Let's go!</h1>
 
-    <form action="{% url 'new_search' %}" method="post">
+    <form action="{% url 'new_search' %}" method="post" class="col s12">
         {% csrf_token %}
-        <input type="text" name="search" placeholder="Search here!">
-        <input type="text" name="min_price" placeholder="Enter minimum price here!">
-        <input type="text" name="max_price" placeholder="Enter maximum price here!">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-        </button>
+        <div class="row">
+            <div class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">arrow_forward</i>
+                  <input type="text" id="autocomplete-input" class="autocomplete" name="search">
+                  <label for="autocomplete-input">Search here!</label>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="input-field col s6">
+            <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color: black;">
+                Submit<i class="material-icons right">search</i>
+            </button>
+        </div>
     </form>
     
     {% block content %}
@@ -63,11 +74,11 @@
     {% endblock content %}
     </div>
     <!-- FOOTER AREA -->
-    <footer class="page-footer">
+    <footer class="page-footer" style="background-color: black;">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
+              <h5 class="white-text"></h5>
               <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
             </div>
             <div class="col l4 offset-l2 s12">
