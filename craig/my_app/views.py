@@ -3,10 +3,11 @@ import requests
 from bs4 import BeautifulSoup
 from requests.compat import quote_plus
 from my_app.models import *
+from datetime import datetime
 
 # Create your views here.
 
-CRAIGLIST_URL = "https://mumbai.craigslist.org/search/?query={}"
+CRAIGLIST_URL = "https://{}.craigslist.org/search/?query={}"
 IMAGE_URL = "https://images.craigslist.org/{}_300x300.jpg"
 
 def home(request):
@@ -14,8 +15,10 @@ def home(request):
 
 def new_search(request):
     search = request.POST.get('search')
-    Search.objects.create(search=search)
-    craig_url = CRAIGLIST_URL.format(quote_plus(search))
+    area = request.POST.get('area')
+    date = datetime.now()
+    Search.objects.create(search=search, area=area, created=date)
+    craig_url = CRAIGLIST_URL.format(area, quote_plus(search))
     response = requests.get(craig_url)
     data = response.text
     soup = BeautifulSoup(data, features='html.parser')

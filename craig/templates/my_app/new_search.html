@@ -8,7 +8,7 @@
 </head>
 <body>
     {% block content %}
-    <h2 style="text-align: center; color: whitesmoke;">You searched for: {{ search | title }}</h2>
+    <h2 style="text-align: center; color: whitesmoke;">You searched for - {{ search | title }}</h2>
     <div class="row">
         {% for post in final_post %}
             <div class="col s4">
@@ -20,7 +20,7 @@
                         <p>{{ post.0 }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="{{ post.1 }}">View listing: Price {{ post.2 }}</a>
+                        <a href="{{ post.1 }}">Listed Price: {{ post.2 }}</a>
                     </div>
                 </div>
             </div>

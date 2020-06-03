@@ -9,13 +9,19 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+    ::placeholder {
+      color: black;
+      padding: 15px;
+    }
+    </style>
 </head>
 <body>
     <!-- NAVIGATION BAR -->
     <nav>
-      <div class="nav-wrapper" style="background-color: black;">
+      <div class="nav-wrapper" style="background-color: rgb(59, 58, 58);">
         <a href="#" class="brand-logo center">
-          <i class="material-icons" style="color: white; font-size:50px">all_inclusive</i>
+          <i class="material-icons" style="color: white; font-size:60px">all_inclusive</i>
         </a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="{% url 'home' %}">
@@ -40,7 +46,7 @@
                 <div class="center">
                     <i class="large material-icons">camera</i>
                     <p style="font-size: 20px;">Filter your searches</p>
-                    <p class="center" style="color: rgb(87, 78, 78);">We built in functionality to filter based on pricing</p>
+                    <p class="center" style="color: rgb(87, 78, 78);">We've built in a functionality to search in city of choice</p>
                 </div>
             </div>
             <div class="col s4">
@@ -52,7 +58,7 @@
             </div>
         </div>
     <!-- FORM -->
-    <h2 style="text-shadow: rgb(72, 89, 92);">Let's go!</h2>
+    <h2>Let's get searching!</h2>
 
     <form action="{% url 'new_search' %}" method="post" class="col s12">
         {% csrf_token %}
@@ -60,15 +66,25 @@
             <div class="col s12">
               <div class="row">
                 <div class="input-field col s12" >
-                  <i class="material-icons prefix">arrow_forward</i>
-                  <input type="text"  placeholder="Search here!" name="search" style="background-color: whitesmoke;" >
+                  <i class="material-icons prefix" style="font-size: 35px;">location_on</i>
+                  <input type="text" placeholder="Enter your city here!"
+                  style="border: 2px solid black; background-color: white; border-radius: 10px;"
+                  name="area">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12" >
+                  <i class="material-icons prefix" style="font-size: 35px;">mode_edit</i>
+                  <input type="text" placeholder="What is your desired category?" 
+                  style="border: 2px solid black; background-color: white; border-radius: 10px;" 
+                  name="search">
                 </div>
               </div>
             </div>
         </div>
         <div class="input-field col s6">
-            <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color: black;">
-                Submit<i class="material-icons right">search</i>
+            <button class="btn waves-effect waves-light" type="submit" name="action" style="background-color: rgb(59, 58, 58);">
+                <strong style="font-size: 20px;">Search</strong><i class="material-icons right" style="font-size: 30px;">search</i>
             </button>
         </div>
     </form>
@@ -78,28 +94,16 @@
     {% endblock content %}
     </div>
     <!-- FOOTER AREA -->
-    <footer class="page-footer" style="background-color: black;">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text"></h5>
-              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              </ul>
-            </div>
-          </div>
+    <footer class="page-footer" style="background-color: rgb(59, 58, 58); margin-top: 95px;">
+      <div class="footer-copyright">
+        <div class="container" style="margin: 10px;">
+        © 2020. All rights reserved.
+          <a class="grey-text text-lighten-4 right" href="#" style="padding-left: 50px; font-size: 20px;">Contact</a>
+          <a class="grey-text text-lighten-4 right" href="https://www.linkedin.com/in/jash-gaglani-0b1ab9179/" style="padding-left: 50px; font-size: 20px;">LinkedIn</a>
+          <a class="grey-text text-lighten-4 right" href="https://github.com/jash56/" style="padding-left: 50px; font-size: 20px;">Github</a>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © 2020. All Rights Reserved.
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-          </div>
-        </div>
-      </footer>
+      </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
 </body>
 </html>
