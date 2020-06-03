@@ -8,17 +8,13 @@
     overflow: hidden;
 }
 
-h2 {
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: rgb(152, 255, 255);
-
+    background-image: url(https://images.squarespace-cdn.com/content/v1/52e1b262e4b06ef060506756/1535643629366-V4ARHFUWDLKYECP0UC1J/ke17ZwdGBToddI8pDm48kAt72yGFwHZjoxtmj75n0VMUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dvp1wM0jvciobd5mvjBb-PkjbbxSYDSdt-BIyUswy_5eG6v6ULRah83RgHXAWD5lbQ/In_Line-6.jpg?format=1500w);
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 
   main {

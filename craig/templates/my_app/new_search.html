@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
-
-{% block content %}
-    <h2 style="text-align: center">{{ search | title }}</h2>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h2 style="text-align: center; color: whitesmoke;">You searched for: {{ search | title }}</h2>
     <div class="row">
         {% for post in final_post %}
             <div class="col s4">
@@ -20,6 +26,7 @@
             </div>
         {% endfor %}
     </div>
-{% endblock content %}
-
-
+    {% endblock content %}
+    
+</body>
+</html>

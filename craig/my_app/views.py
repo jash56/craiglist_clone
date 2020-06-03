@@ -23,7 +23,7 @@ def new_search(request):
     final_post = []
 
     for post in post_listings:
-        post_title = post.find(class_='result-title hdrlnk').text
+        post_title = post.find(class_='result-title').text
         post_url = post.find('a').get('href')
         if post.find(class_='result-price'):
             post_price = post.find(class_='result-price').text

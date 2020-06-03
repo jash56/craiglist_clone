@@ -13,51 +13,55 @@
 <body>
     <!-- NAVIGATION BAR -->
     <nav>
-        <div class="nav-wrapper" style="background-color: black;">
-            <a href="{% url 'home' %}" class="brand-logo center"><i class="large material-icons" style="color: white; font-size:60px">all_inclusive</i>Home</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="https://github.com/jash56/craiglist_clone">Contribute on GitHub!</a></li>
-            </ul>
-        </div>
+      <div class="nav-wrapper" style="background-color: black;">
+        <a href="#" class="brand-logo center">
+          <i class="material-icons" style="color: white; font-size:50px">all_inclusive</i>
+        </a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="{% url 'home' %}">
+            <i class="large material-icons" style="color: white; font-size:40px">home</i></a>
+          </li>
+          <li><a href="https://github.com/jash56/craiglist_clone">Contribute on Github!</a></li>
+        </ul>
+      </div>
     </nav>
     
-    <div class="container">
-    <h1 style="text-align: center">Welcome</h1>
+    <div class="container" style="font-weight: 1000;">
+    <h2 style="text-align: center; color: black; text-shadow: rgb(72, 89, 92);">Welcome</h2>
         <div class="row">
             <div class="col s4">
                 <div class="center">
-                    <i class="large material-icons" style="color: black">flash_on</i>
-                    <p>Craiglist web scrapper</p>
-                    <p class="light center">Scrape it with us!</p>
+                    <i class="large material-icons">flash_on</i>
+                    <p style="font-size: 20px;">Craiglist web scrapper</p>
+                    <p class="center" style="color: rgb(87, 78, 78);">Scrape it with us!</p>
                 </div>
             </div>
             <div class="col s4">
                 <div class="center">
-                    <i class="large material-icons" style="color: black">camera</i>
-                    <p>Filter your searches</p>
-                    <p class="light center">We built in functionality to filter based on pricing</p>
+                    <i class="large material-icons">camera</i>
+                    <p style="font-size: 20px;">Filter your searches</p>
+                    <p class="center" style="color: rgb(87, 78, 78);">We built in functionality to filter based on pricing</p>
                 </div>
             </div>
             <div class="col s4">
                 <div class="center">
-                    <i class="large material-icons" style="color: black">chrome_reader_mode</i>
-                    <p>A great GUI for Craiglist</p>
-                    <p class="light center">We used materialize</p>
+                    <i class="large material-icons">chrome_reader_mode</i>
+                    <p style="font-size: 20px;">A great GUI for Craiglist</p>
+                    <p class="center" style="color: rgb(87, 78, 78);">We used materialize</p>
                 </div>
             </div>
         </div>
     <!-- FORM -->
-    <h1>Let's go!</h1>
+    <h2 style="text-shadow: rgb(72, 89, 92);">Let's go!</h2>
 
     <form action="{% url 'new_search' %}" method="post" class="col s12">
         {% csrf_token %}
-        <div class="row">
+        <div class="row" >
             <div class="col s12">
               <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s12" >
                   <i class="material-icons prefix">arrow_forward</i>
-                  <input type="text" id="autocomplete-input" class="autocomplete" name="search">
-                  <label for="autocomplete-input">Search here!</label>
+                  <input type="text"  placeholder="Search here!" name="search" style="background-color: whitesmoke;" >
                 </div>
               </div>
             </div>
@@ -91,7 +95,7 @@
         </div>
         <div class="footer-copyright">
           <div class="container">
-          © 2014 Copyright Text
+          © 2020. All Rights Reserved.
           <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
           </div>
         </div>
