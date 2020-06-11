@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a34e833f-f90d-42c7-a6e0-8cc57bfab641" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/craig/craig/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/craig/craig/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/craig/my_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/craig/my_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/craig/my_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/craig/my_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/craig/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/craig/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/craig/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/craig/templates/base.html" afterDir="false" />
-    </list>
+    <list default="true" id="a34e833f-f90d-42c7-a6e0-8cc57bfab641" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
